@@ -16,7 +16,7 @@ do
   $KUBECTL label nodes "$NODE" beta.kubernetes.io/fluentd-ds-ready=true || true
 done
 
-"$SNAP/microk8s-enable.wrapper" dns
+microk8s.enable dns
 sleep 5
 
 refresh_opt_in_config "allow-privileged" "true" kube-apiserver
